@@ -1,0 +1,100 @@
+/* 基本スタイル */
+:root {
+  --primary: #ffb347;
+  --secondary: #ffe29a;
+  --text: #333;
+  --bg: #fff;
+  --max-width: 960px;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+header {
+  background: var(--primary);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header h1 { margin: 0; font-size: 1.2rem; }
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+#toggleMenu {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+main {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 1rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+section h2 { margin-top: 0; }
+
+.timeline article {
+  background: var(--secondary);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  background: #fafafa;
+}
+
+footer {
+  background: #f1f1f1;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* レスポンシブ */
+@media (max-width: 600px) {
+  nav ul {
+    position: absolute;
+    top: 56px;
+    right: 0;
+    background: var(--primary);
+    flex-direction: column;
+    width: 200px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+  nav ul.open { transform: translateX(0); }
+  #toggleMenu { display: block; }
+}
