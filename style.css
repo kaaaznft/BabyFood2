@@ -83,6 +83,43 @@ footer {
   padding: 1rem;
 }
 
+.food-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+.food-list figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.food-list img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+.food-list h4 {
+  margin: 0.5rem;
+  font-size: 1rem;
+}
+.food-list p {
+  margin: 0 0.5rem 0.8rem;
+  font-size: 0.9rem;
+}
+.stage .note {
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
 /* レスポンシブ */
 @media (max-width: 600px) {
   nav ul {
